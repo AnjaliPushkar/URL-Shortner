@@ -25,7 +25,7 @@ SECRET_KEY = 'ypkf=)b6n0^3r%@*xg#-f0n3a)0h9h$wv2c$7=@ly_u$di%!_-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.tirr.com', 'tirr.com','www.kirr.co', 'kirr.co']
 
 
 # Application definition
@@ -120,5 +120,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-SHORTCODE_MAX = 10
-SHORTCODE_MIN = 4
+SHORTCODE_MAX = 15
+SHORTCODE_MIN = 6

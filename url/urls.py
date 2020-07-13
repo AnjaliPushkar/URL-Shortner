@@ -19,7 +19,7 @@ from django.conf.urls import url
 from shortener.views import kirr_redirect_view, kirrCBView
 
 urlpatterns = [
-    url(r'^a/(?P<shortcode>[\w-]+)/$', kirr_redirect_view),
-    url(r'^b/(?P<shortcode>[\w-]+)/$', kirrCBView.as_view()),
+    url(r'^a/(?P<shortcode>[\w-]+){6, 15}/$', kirr_redirect_view),
+    url(r'^b/(?P<shortcode>[\w-]+){6,15}/$', kirrCBView.as_view()),
     path('admin/', admin.site.urls),
 ]
