@@ -9,6 +9,8 @@ class shorturlManager(models.Manager):
 
     def refresh_shortcodes(self):
         qs = shorturl.objects.filter(id__gte=1)
+        if items is not None and isinstance(items, int):
+            qs = qs.order_by('-id')[:items]
         new_codes = 0
         for q in qs:
             q.shortcode = create_shortcode(q)
@@ -23,6 +25,7 @@ class shorturl(models.Model):
     updated = models.DateTimeField(auto_now = True)
     timestamp = models.DateTimeField(auto_now_add = True)
     active = models.BooleanField(default=True)
+    objects = shorturlManager()
 
     def save(self, *args, **kwargs):
         if self.shortcode is None or self.shortcode == "":

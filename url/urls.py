@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from shortener.views import kirr_redirect_view, kirrCBView
 
 urlpatterns = [
+    url(r'^view-1/$', kirr_redirect_view),
+    url(r'^view-2/$', kirrCBView.as_view()),
     path('admin/', admin.site.urls),
 ]
