@@ -25,7 +25,7 @@ SECRET_KEY = 'ypkf=)b6n0^3r%@*xg#-f0n3a)0h9h$wv2c$7=@ly_u$di%!_-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.tirr.com', 'tirr.com','www.kirr.co', 'kirr.co']
+ALLOWED_HOSTS = ['www.tirr.com', 'tirr.com','www.kirr.co', 'kirr.co', '127.0.0.1:8000', '127.0.0.1']
 
 
 # Application definition
@@ -56,7 +56,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'url.urls'
 ROOT_HOSTCONF = 'url.hosts'
 DEFAULT_HOST ='www'
-DEFAULT_REDIRECT_URL="http://www.tirr.com"
+DEFAULT_REDIRECT_URL="http://www.tirr.com:8000"
 
 TEMPLATES = [
     {

@@ -4,12 +4,9 @@ from django.views import View
 
 from .models import shorturl
 
-def test_view(request):
-    return HttpResponse("some stuff")
-
-def kirr_redirect_view(request, shortcode=None, *args, **kwargs):
-    obj = get_object_or_404(shorturl, shortcode=shortcode)
-    return HttpResponse("hello {sc}".format(sc=shortcode))
+class HomeView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, "shortener/home.html", {})
 
 class kirrCBView(View):
     def get(self, request, shortcode=None, *args, **kwargs):
